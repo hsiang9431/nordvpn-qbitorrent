@@ -1,0 +1,20 @@
+FROM ubuntu:noble
+
+RUN apt update -y && \
+  apt install -y software-properties-common && \
+  add-apt-repository ppa:qbittorrent-team/qbittorrent-stable && \
+  apt install -y qbittorrent-nox && \
+  rm -rf \
+    /tmp/* \
+    /var/cache/apt/archives/* \
+    /var/lib/apt/lists/* \
+    /var/tmp/*
+
+RUN mkdir -p /etc/qBittorrent/config && \
+    echo '[Preferences]\n\
+WebUI\AuthSubnetWhitelist=0.0.0.0/0\n\
+WebUI\AuthSubnetWhitelistEnabled=true\n\
+WebUI\UseUPnP=false\n' \
+>> /etc/qBittorrent/config/qBittorrent.conf
+
+ENTRYPOINT [ "qbittorrent-nox" ]

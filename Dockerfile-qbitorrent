@@ -1,7 +1,7 @@
 FROM lscr.io/linuxserver/qbittorrent:latest
 
-RUN echo '[Preferences]\n\
+RUN mkdir -p /config/qBittorrent/ && echo $' \n\
+[Preferences]\n\
 WebUI\AuthSubnetWhitelist=0.0.0.0/0\n\
 WebUI\AuthSubnetWhitelistEnabled=true\n\
-WebUI\UseUPnP=false\n' \
->> /defaults/qBittorrent.conf
+WebUI\UseUPnP=false' >> /config/qBittorrent/qBittorrent.conf

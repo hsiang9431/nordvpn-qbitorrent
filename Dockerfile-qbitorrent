@@ -4,4 +4,5 @@ RUN mkdir -p /config/qBittorrent/ && echo $' \n\
 [Preferences]\n\
 WebUI\AuthSubnetWhitelist=0.0.0.0/0\n\
 WebUI\AuthSubnetWhitelistEnabled=true\n\
-WebUI\UseUPnP=false' >> /config/qBittorrent/qBittorrent.conf
+WebUI\UseUPnP=false\n\
+WebUI\RootFolder=/vuetorrent' >> /config/qBittorrent/qBittorrent.conf

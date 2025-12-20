@@ -27,12 +27,12 @@ In `docker-compose.yml`, change download location in volume setting
 
 ```yaml
 volumes:
-  - "C:\\Downloads:/etc/qBittorrent/downloads"
+  - C:\Downloads:/etc/qBittorrent/downloads
 ```
 
 ## Start/Stop service
 
-Use `docker-compose.exe` to start service. This exe file comes with Docker Desktops on Windows.
+Use `docker-compose.exe` to start service. This exe file comes with Docker Desktop on Windows.
 
 ```
 PS D:\github\nordvpn-qbitorrent> docker-compose.exe up -d

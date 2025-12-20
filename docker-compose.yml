@@ -26,9 +26,14 @@ services:
     network_mode: service:nordvpn
     command: [ '--profile=/etc' ]
     volumes:
-      - "C:\\Downloads:/etc/qBittorrent/downloads"
+      - C:\Downloads:/etc/qBittorrent/downloads
+      - qbitorrent-data:/etc/qBittorrent/data
     restart: unless-stopped
     depends_on:
       nordvpn:
         condition: service_healthy
         restart: true
+
+volumes:
+  qbitorrent-data:
+
